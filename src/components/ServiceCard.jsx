@@ -1,18 +1,20 @@
 import styles from './ServiceCard.module.css';
 
-function ServiceCard({ service, reservation, setReservation}) {
+function ServiceCard({ service, reservation, setReservation }) {
 
   const handleClick = () => {
     if (reservation.serviceName === service.name) {
-      setReservation({ ...reservation, 
-        serviceId: null, 
+      setReservation({
+        ...reservation,
+        serviceId: null,
         serviceName: null
       });
       return;
-    } 
-    setReservation({ ...reservation, 
-      serviceId: service.id, 
-      serviceName: service.name 
+    }
+    setReservation({
+      ...reservation,
+      serviceId: service.id,
+      serviceName: service.name
     });
   };
 
@@ -20,7 +22,11 @@ function ServiceCard({ service, reservation, setReservation}) {
     <div className={styles.serviceCard}>
       <h4>{service.name}</h4>
       <p>{service.description}</p>
-        <button className={styles.btn} onClick={handleClick}>{reservation.serviceName === service.name ? "Seleccionado" : "Seleccionar"}</button>
+      <button
+       className={`${reservation.serviceName === service.name ? styles.btnSelected : styles.btn}`}
+        onClick={handleClick}>
+        {reservation.serviceName === service.name ? "Seleccionado" : "Seleccionar"}
+      </button>
     </div>
   );
 };

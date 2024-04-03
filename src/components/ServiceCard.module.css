@@ -10,6 +10,22 @@
 }
 
 .btn {
-    width: fit-content;
+    height: 40px;
+    width: 100px;
     align-self: flex-end;
+    border-radius: 5px;
+    border-color: transparent;
+    color: black;
+    background-color: lightgray;
 }
+
+.btnSelected {
+    height: 40px;
+    width: 100px;
+    align-self: flex-end;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #6BC9F2; 
+    color: white; 
+    font-weight: 800;
+   }

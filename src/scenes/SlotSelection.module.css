@@ -9,6 +9,9 @@
 
 .containerTimeSlots {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .containerDates {
@@ -35,7 +38,11 @@
 }
 
 .btnSelected {
-    background-color: darkgray; /* Example color for selected state */
-    color: white; /* Ensure text is readable on the selected background */
-    font-weight: 800;
+    height: 40px;
+    width: 100px;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: #6BC9F2; 
+    color: white; 
+    font-weight: bold;
    }
