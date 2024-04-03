@@ -28,4 +28,13 @@
 .btn {
     height: 40px;
     width: 100px;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: lightgray;
 }
+
+.btnSelected {
+    background-color: darkgray; /* Example color for selected state */
+    color: white; /* Ensure text is readable on the selected background */
+    font-weight: 800;
+   }

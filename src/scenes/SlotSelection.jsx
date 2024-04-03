@@ -38,7 +38,10 @@ function SlotSelection() {
               <div className={styles.containerTimes} >
                 {timeSlot.availableTimesSlots.map(time => (
                   <div key={time}>
-                    <button className={styles.btn} onClick={() => handleClick(formatDate(timeSlot.date), time)}>{time}</button>
+                    <button
+                      className={`${styles.btn} ${reservation.timeSlot === `${formatDate(timeSlot.date)} - ${time}` ? styles.btnSelected : ''}`}
+                      onClick={() => handleClick(formatDate(timeSlot.date), time)}>{time}
+                    </button>
                   </div>
                 ))}
               </div>

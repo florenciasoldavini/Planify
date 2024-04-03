@@ -21,7 +21,8 @@
 
 .toggle {
     width: 100%;
-    padding: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,5 +34,15 @@
 .btn {
     border: none;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    height: 40px;
+    width: 40px;
+    background-color: darkgray;
+    border-radius: 50%;
 }
 
