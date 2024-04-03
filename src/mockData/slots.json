@@ -1,0 +1,144 @@
+{
+  "slots": [
+     {
+       "id": 1,
+       "serviceId": 1,
+       "dates": [
+         {
+           "date": "2024-04-01",
+           "availableTimesSlots": ["09:00", "10:00", "11:00"]
+         },
+         {
+           "date": "2024-04-02",
+           "availableTimesSlots": ["14:00", "15:00"]
+         }
+       ]
+     },
+     {
+       "id": 2,
+       "serviceId": 2,
+       "dates": [
+         {
+           "date": "2024-04-03",
+           "availableTimesSlots": ["09:30", "10:30", "11:30", "12:30"]
+         },
+         {
+           "date": "2024-04-04",
+           "availableTimesSlots": ["14:30"]
+         }
+       ]
+     },
+     {
+       "id": 3,
+       "serviceId": 3,
+       "dates": [
+         {
+           "date": "2024-04-05",
+           "availableTimesSlots": ["09:00", "10:00"]
+         },
+         {
+           "date": "2024-04-13",
+           "availableTimesSlots": ["14:00", "15:00", "16:00", "17:00"]
+         }
+       ]
+     },
+     {
+       "id": 4,
+       "serviceId": 4,
+       "dates": [
+         {
+           "date": "2024-04-07",
+           "availableTimesSlots": ["09:30"]
+         },
+         {
+           "date": "2024-04-08",
+           "availableTimesSlots": ["14:30", "15:30"]
+         }
+       ]
+     },
+     {
+       "id": 5,
+       "serviceId": 5,
+       "dates": [
+         {
+           "date": "2024-04-09",
+           "availableTimesSlots": ["09:00", "10:00", "11:00", "12:00", "13:00"]
+         },
+         {
+           "date": "2024-04-10",
+           "availableTimesSlots": ["14:00", "15:00", "16:00"]
+         }
+       ]
+     },
+     {
+       "id": 6,
+       "serviceId": 6,
+       "dates": [
+         {
+           "date": "2024-04-11",
+           "availableTimesSlots": ["09:30", "10:30"]
+         },
+         {
+           "date": "2024-04-12",
+           "availableTimesSlots": ["14:30"]
+         }
+       ]
+     },
+     {
+       "id": 7,
+       "serviceId": 7,
+       "dates": [
+         {
+           "date": "2024-04-13",
+           "availableTimesSlots": ["09:00", "10:00", "11:00", "12:00"]
+         },
+         {
+           "date": "2024-04-14",
+           "availableTimesSlots": ["14:00", "15:00", "16:00", "17:00", "18:00"]
+         }
+       ]
+     },
+     {
+       "id": 8,
+       "serviceId": 8,
+       "dates": [
+         {
+           "date": "2024-04-15",
+           "availableTimesSlots": ["09:30", "10:30", "11:30", "12:30", "13:30"]
+         },
+         {
+           "date": "2024-04-16",
+           "availableTimesSlots": ["14:30", "15:30"]
+         }
+       ]
+     },
+     {
+       "id": 9,
+       "serviceId": 9,
+       "dates": [
+         {
+           "date": "2024-04-17",
+           "availableTimesSlots": ["09:00", "10:00"]
+         },
+         {
+           "date": "2024-04-18",
+           "availableTimesSlots": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+         }
+       ]
+     },
+     {
+       "id": 10,
+       "serviceId": 10,
+       "dates": [
+         {
+           "date": "2023-04-19",
+           "availableTimesSlots": ["09:30", "10:30", "11:30"]
+         },
+         {
+           "date": "2023-04-20",
+           "availableTimesSlots": ["14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30"]
+         }
+       ]
+     }
+  ]
+ }
