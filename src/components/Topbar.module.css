@@ -1,0 +1,17 @@
+.topbar {
+    max-width: 844px;
+}
+
+.progressbar {
+    width: 100%; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    background-color: #f3f3f3; /* Background color of the progress bar container */
+    border-radius: 50px; /* Optional: Rounded corners */
+    overflow: hidden; /* Ensures the progress bar does not overflow the container */
+   }
+   
+   .progress {
+    height: 100%;
+    background-color: #4caf50; /* Color of the progress bar */
+    width: 50%; /* Adjust the width to represent the progress */
+   }

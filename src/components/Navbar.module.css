@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.menuItem {
+    display: flex;
+    flex-direction: column;
+}

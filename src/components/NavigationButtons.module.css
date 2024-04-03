@@ -1,0 +1,9 @@
+.navigationButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    width: fit-content;
+}

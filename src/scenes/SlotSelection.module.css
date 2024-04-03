@@ -1,0 +1,13 @@
+.slotSelection {
+    max-width: 844px;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.timeSlots {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
