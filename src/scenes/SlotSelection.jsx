@@ -1,26 +1,25 @@
-import React from 'react';
-import NavigationButtons from "../components/NavigationButtons";
-import slotsData from "../mockData/slots.json";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
 import styles from './SlotSelection.module.css';
+import slotsData from "../mockData/slots.json";
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import ReservationContext from '../contexts/ReservationContext';
+import NavigationButtons from "../components/NavigationButtons";
+
+
 
 function SlotSelection() {
   const { serviceId } = useParams();
+  const { reservation, setReservation } = useContext(ReservationContext);
   const slots = slotsData.slots.filter(slot => slot.serviceId === parseInt(serviceId));
   const dates = slots[0].dates;
-  const [selectedSlot, setSelectedSlot] = useState({
-    date: "",
-    time: ""
-  });
-
-  console.log(selectedSlot);
 
   const handleClick = (date, time) => {
-    setSelectedSlot({
-      date,
-      time
-    });
+    if (reservation.timeSlot === `${date} - ${time}`) { 
+      setReservation({ ...reservation, timeSlot: null });
+      return;
+    }
+
+    setReservation({ ...reservation, timeSlot: `${date} - ${time}` });
   };
 
   const formatDate = (dateString) => {
@@ -37,13 +36,13 @@ function SlotSelection() {
           <div className={styles.timeSlots} >
             {timeSlot.availableTimesSlots.map(time => (
               <div key={time}>
-                <button onClick={() => handleClick(timeSlot.date, time)}>{time}</button>
+                <button onClick={() => handleClick(formatDate(timeSlot.date), time)}>{time}</button>
               </div>
             ))}
           </div>
         </div>
       ))}
-      <NavigationButtons serviceId={serviceId}/>
+      <NavigationButtons serviceId={serviceId} selectedTimeSlot={reservation.timeSlot}/>
     </div>
   );
 };

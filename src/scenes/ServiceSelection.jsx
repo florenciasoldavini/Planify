@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import servicesData from '../mockData/services.json';
 import styles from './ServiceSelection.module.css';
+import servicesData from '../mockData/services.json';
+import React, { useState, useContext } from 'react';
+import ReservationContext from '../contexts/ReservationContext';
 import ServiceCard from '../components/ServiceCard';
 import NavigationButtons from '../components/NavigationButtons';
+
 
 function ServiceSelection() {
     const services = servicesData.services;
     const categories = [...new Set(services.map(service => service.category))];
     const [isMenuVisible, setIsMenuVisible] = useState({});
-    const [selectedService, setSelectedService] = useState({
-        id: "",
-        name: "",
-    });
+    const { reservation, setReservation } = useContext(ReservationContext);
+
 
     const handleClick = (category) => {
         setIsMenuVisible(prevState => ({
@@ -37,7 +37,7 @@ function ServiceSelection() {
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         strokeWidth="2.5"
-                                        stroke="currentColor"
+                                        stroke="black"
                                         class="w-6 h-6">
                                         <path strokeLinecap="round"
                                             strokeLinejoin="round"
@@ -51,7 +51,7 @@ function ServiceSelection() {
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         strokeWidth="2.5"
-                                        stroke="currentColor"
+                                        stroke="black"
                                         class="w-6 h-6">
                                         <path strokeLinecap="round"
                                             strokeLinejoin="round"
@@ -63,14 +63,14 @@ function ServiceSelection() {
                         {isMenuVisible[category] && (
                             <div className={styles.serviceList}>
                                 {services.filter(service => service.category === category).map(service => (
-                                    <ServiceCard key={service.id} service={service} selectedService={selectedService} setSelectedService={setSelectedService}/>
+                                    <ServiceCard key={service.id} service={service} reservation={reservation} setReservation={setReservation}/>
                                 ))}
                             </div>
                         )}
                     </div>
                 ))}
             </div>
-            {selectedService.id ? <NavigationButtons serviceId={selectedService.id}/> : <p>Para poder continuar por favor seleccione un servicio</p>}
+            {reservation.serviceId ? <NavigationButtons serviceId={reservation.serviceId}/> : <p>Para poder continuar por favor seleccione un servicio</p>}
         </div>
     );
 };

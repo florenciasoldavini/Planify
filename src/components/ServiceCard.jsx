@@ -1,23 +1,26 @@
 import styles from './ServiceCard.module.css';
 
-function ServiceCard({ service, selectedService, setSelectedService}) {
+function ServiceCard({ service, reservation, setReservation}) {
 
   const handleClick = () => {
-    if (selectedService.name === service.name) {
-      setSelectedService({
-        id: "",
-        name: "",
-    });
+    if (reservation.serviceName === service.name) {
+      setReservation({ ...reservation, 
+        serviceId: null, 
+        serviceName: null
+      });
       return;
     } 
-    setSelectedService(service);
+    setReservation({ ...reservation, 
+      serviceId: service.id, 
+      serviceName: service.name 
+    });
   };
 
   return (
     <div className={styles.serviceCard}>
       <p>{service.name}</p>
       <p>{service.description}</p>
-        <button className={styles.btn} onClick={handleClick}>{selectedService.name === service.name ? "Seleccionado" : "Seleccionar"}</button>
+        <button className={styles.btn} onClick={handleClick}>{reservation.serviceName === service.name ? "Seleccionado" : "Seleccionar"}</button>
     </div>
   );
 };

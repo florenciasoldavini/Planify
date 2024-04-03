@@ -8,13 +8,14 @@ import MyAppointments from './scenes/MyAppointments';
 import { useLocation } from "react-router-dom";
 import Topbar from './components/Topbar';
 
+
 function App() {
   const location = useLocation();
   const isMakeAppointment = location.pathname.startsWith("/appointment");
 
 
   return (
-    <div>
+    <div className="containerApp">
       {
         isMakeAppointment && <Topbar />
       }
