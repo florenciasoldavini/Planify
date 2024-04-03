@@ -7,12 +7,19 @@
   justify-content: center;
 }
 
-.containerApp {
+.app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
+.main-content {
+  width: 100%;
+  max-width: 804px;
+  padding: 20px;
+  flex-grow: 1; /* This allows the main content to take up the remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+}

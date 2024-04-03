@@ -1,9 +1,24 @@
 .navigationButtons {
+    margin: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
+.containerPrev {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.containerNext {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
 .btn {
-    width: fit-content;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
 }

@@ -14,7 +14,7 @@ function SlotSelection() {
   const dates = slots[0].dates;
 
   const handleClick = (date, time) => {
-    if (reservation.timeSlot === `${date} - ${time}`) { 
+    if (reservation.timeSlot === `${date} - ${time}`) {
       setReservation({ ...reservation, timeSlot: null });
       return;
     }
@@ -28,21 +28,25 @@ function SlotSelection() {
   };
 
   return (
-    <div className={styles.slotSelection}>
-      <h1>Proximos turnos disponibles</h1>
-      {dates.map(timeSlot => (
-        <div key={timeSlot.date}>
-          <h2>{formatDate(timeSlot.date)}</h2>
-          <div className={styles.timeSlots} >
-            {timeSlot.availableTimesSlots.map(time => (
-              <div key={time}>
-                <button onClick={() => handleClick(formatDate(timeSlot.date), time)}>{time}</button>
+    <div>
+      <div className={styles.slotSelection}>
+        <h2>Proximos turnos disponibles</h2>
+        <div className={styles.containerTimeSlots}>
+          {dates.map(timeSlot => (
+            <div className={styles.containerDates} key={timeSlot.date}>
+              <h3>{formatDate(timeSlot.date)}</h3>
+              <div className={styles.containerTimes} >
+                {timeSlot.availableTimesSlots.map(time => (
+                  <div key={time}>
+                    <button className={styles.btn} onClick={() => handleClick(formatDate(timeSlot.date), time)}>{time}</button>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      ))}
-      <NavigationButtons serviceId={serviceId} selectedTimeSlot={reservation.timeSlot}/>
+      </div>
+      <NavigationButtons serviceId={serviceId} selectedTimeSlot={reservation.timeSlot} />
     </div>
   );
 };

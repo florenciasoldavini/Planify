@@ -1,13 +1,31 @@
 .slotSelection {
-    max-width: 844px;
+    width: 100%;
     padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    box-sizing: border-box;
 }
 
-.timeSlots {
+.containerTimeSlots {
+    width: 100%;
+}
+
+.containerDates {
+    width: 100%;
+}
+
+.containerTimes {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
+    box-sizing: border-box;
+}
+
+.btn {
+    height: 40px;
+    width: 100px;
 }

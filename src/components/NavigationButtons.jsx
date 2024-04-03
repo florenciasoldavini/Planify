@@ -1,3 +1,4 @@
+import styles from './NavigationButtons.module.css';
 import { Link } from "react-router-dom";
 import { useLocation, generatePath } from "react-router-dom";
 
@@ -27,21 +28,25 @@ function NavigationButtons({ serviceId, selectedTimeSlot }) {
     const disableNextButton = currentPath.startsWith("/appointment/slots") && (!selectedTimeSlot);
 
     return (
-        <div>
-            {prevStep && (
-                <button>
-                    <Link to={prevStep}>Anterior</Link>
-                </button>
-            )}
-            {nextStep && (
-                <button>
-                    {disableNextButton ? (
-                        <span>Siguiente</span> // Render text instead of a link when disabled
-                    ) : (
-                        <Link to={nextStep}>{nextStep === "/myappointments" ? "Confirmar" : "Siguiente"}</Link>
-                    )}
-                </button>
-            )}
+        <div className={styles.navigationButtons}>
+            <div className={styles.containerPrev}>
+                {prevStep && (
+                    <button className={styles.btn}>
+                        <Link to={prevStep}>Anterior</Link>
+                    </button>
+                )}
+            </div>
+            <div className={styles.containerNext}>
+                {nextStep && (
+                    <button className={styles.btn}>
+                        {disableNextButton ? (
+                            <span>Siguiente</span> // Render text instead of a link when disabled
+                        ) : (
+                            <Link to={nextStep}>{nextStep === "/myappointments" ? "Confirmar" : "Siguiente"}</Link>
+                        )}
+                    </button>
+                )}
+            </div>
         </div>
     );
 };

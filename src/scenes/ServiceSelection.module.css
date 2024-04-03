@@ -1,9 +1,10 @@
 .serviceSelection {
-    max-width: 844px;
+    width: 100%;
     padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    box-sizing: border-box;
 }
 
 .menu {
@@ -26,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
+    box-sizing: border-box;
 }
 
 .btn {

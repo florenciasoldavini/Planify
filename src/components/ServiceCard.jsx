@@ -18,7 +18,7 @@ function ServiceCard({ service, reservation, setReservation}) {
 
   return (
     <div className={styles.serviceCard}>
-      <p>{service.name}</p>
+      <h4>{service.name}</h4>
       <p>{service.description}</p>
         <button className={styles.btn} onClick={handleClick}>{reservation.serviceName === service.name ? "Seleccionado" : "Seleccionar"}</button>
     </div>

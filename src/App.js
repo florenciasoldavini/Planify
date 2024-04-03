@@ -15,19 +15,21 @@ function App() {
 
 
   return (
-    <div className="containerApp">
-      {
-        isMakeAppointment && <Topbar />
-      }
-      <Routes>
-        <Route path="appointment/services" element={<ServiceSelection />} />
-        <Route path="appointment/slots/:serviceId" element={<SlotSelection />} />
-        <Route path="appointment/confirmation/:serviceId" element={<AppointmentConfirmation />} />
-        <Route path="/myappointments" element={<MyAppointments />} />
-      </Routes>
-      <Navbar/>
+    <div className="app">
+      <div className="main-content">
+        {
+          isMakeAppointment && <Topbar />
+        }
+        <Routes>
+          <Route path="appointment/services" element={<ServiceSelection />} />
+          <Route path="appointment/slots/:serviceId" element={<SlotSelection />} />
+          <Route path="appointment/confirmation/:serviceId" element={<AppointmentConfirmation />} />
+          <Route path="/myappointments" element={<MyAppointments />} />
+        </Routes>
+      </div>
+      <Navbar />
     </div>
   );
-} 
+}
 
 export default App;
