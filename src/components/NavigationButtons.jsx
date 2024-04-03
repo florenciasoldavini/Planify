@@ -10,7 +10,6 @@ function NavigationButtons({ serviceId, selectedTimeSlot }) {
         "/appointment/services",
         "/appointment/slots/:serviceId",
         "/appointment/confirmation/:serviceId",
-        "/myappointments"
     ];
 
     const getCurrentStepIndex = () => {
@@ -37,13 +36,11 @@ function NavigationButtons({ serviceId, selectedTimeSlot }) {
                 )}
             </div>
             <div className={styles.containerNext}>
-                {nextStep && (
                     <Link to={nextStep}>
                         <button className={styles.btn} disabled={disableNextButton}>
-                            {nextStep === "/myappointments" ? "Confirmar" : "Siguiente"}
+                            {!nextStep ? "Confirmar" : "Siguiente"}
                         </button>
                     </Link>
-                )}
             </div>
         </div>
     );
