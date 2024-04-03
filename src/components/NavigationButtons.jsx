@@ -31,20 +31,18 @@ function NavigationButtons({ serviceId, selectedTimeSlot }) {
         <div className={styles.navigationButtons}>
             <div className={styles.containerPrev}>
                 {prevStep && (
-                    <button className={styles.btn}>
-                        <Link to={prevStep}>Anterior</Link>
-                    </button>
+                    <Link to={prevStep}>
+                        <button className={styles.btn}>Anterior</button>
+                    </Link>
                 )}
             </div>
             <div className={styles.containerNext}>
                 {nextStep && (
-                    <button className={styles.btn}>
-                        {disableNextButton ? (
-                            <span>Siguiente</span> // Render text instead of a link when disabled
-                        ) : (
-                            <Link to={nextStep}>{nextStep === "/myappointments" ? "Confirmar" : "Siguiente"}</Link>
-                        )}
-                    </button>
+                    <Link to={nextStep}>
+                        <button className={styles.btn} disabled={disableNextButton}>
+                            {nextStep === "/myappointments" ? "Confirmar" : "Siguiente"}
+                        </button>
+                    </Link>
                 )}
             </div>
         </div>
