@@ -12,6 +12,8 @@ function SlotSelection() {
   const slots = slotsData.slots.filter(slot => slot.serviceId === parseInt(serviceId));
   const dates = slots[0]?.dates;
 
+  console.log("RENDERING SLOT SELECTION", useParams())
+
   const handleClick = (date, time) => {
     if (reservation.timeSlot === `${date} - ${time}`) {
       setReservation({ ...reservation, timeSlot: null });
@@ -26,7 +28,7 @@ function SlotSelection() {
     const date = new Date(year, month - 1, day);
     const options = { day: 'numeric', month: 'long' };
     return date.toLocaleDateString('es-ES', options);
-   };
+  };
 
   return (
     <div>
@@ -51,6 +53,10 @@ function SlotSelection() {
           ))}
         </div>
       </div>
+      {!reservation.timeSlot ?
+        <p>Por favor seleccione un turno</p> :
+        <p>Turno seleccionado: {reservation.timeSlot}</p>
+      }
       <NavigationButtons serviceId={serviceId} selectedTimeSlot={reservation.timeSlot} />
     </div>
   );

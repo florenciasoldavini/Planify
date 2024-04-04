@@ -72,7 +72,12 @@ function ServiceSelection() {
                     ))}
                 </div>
             </div>
-            {reservation.serviceId ? <NavigationButtons serviceId={reservation.serviceId} /> : <p>Para poder continuar por favor seleccione un servicio</p>}
+            {reservation.serviceId ? 
+            <div>
+            <p>Servicio seleccionado: {reservation.serviceName}</p>
+            <NavigationButtons serviceId={reservation.serviceId} /> 
+            </div>: 
+            <p>Por favor seleccione un servicio</p>}
         </div>
     );
 };

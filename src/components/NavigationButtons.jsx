@@ -38,7 +38,7 @@ function NavigationButtons({ serviceId, selectedTimeSlot }) {
             </div>
             <div className={styles.containerNext}>
                     <Link to={nextStep}>
-                        <button className={styles.btn} disabled={disableNextButton}>
+                        <button className={disableNextButton ? styles.btnDisabled : styles.btn} disabled={disableNextButton}>
                             {!nextStep ? "Confirmar" : "Siguiente"}
                         </button>
                     </Link>
