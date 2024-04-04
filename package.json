@@ -19,7 +19,7 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-   }
+    }
   },
   "scripts": {
     "start": "react-scripts start",
