@@ -1,18 +1,26 @@
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Navbar from './components/Navbar';
 import ServiceSelection from './scenes/ServiceSelection';
 import SlotSelection from './scenes/SlotSelection';
 import AppointmentConfirmation from './scenes/AppointmentConfirmation';
 import MyAppointments from './scenes/MyAppointments';
-import { useLocation } from "react-router-dom";
 import Topbar from './components/Topbar';
 
 
 function App() {
+  const navigate = useNavigate();
   const location = useLocation();
+  const currentPath = location.pathname;
   const isMakeAppointment = location.pathname.startsWith("/appointment");
 
+  // useEffect = () => {
+  //   if (currentPath === "/") {
+  //     navigate("/appointment/services");
+  //   }
+  // }
+ 
 
   return (
     <div className="app">
