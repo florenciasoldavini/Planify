@@ -12,22 +12,17 @@ import Topbar from './components/Topbar';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const currentPath = location.pathname;
   const isMakeAppointment = location.pathname.startsWith("/appointment");
 
-  // useEffect = () => {
-  //   if (currentPath === "/") {
-  //     navigate("/appointment/services");
-  //   }
-  // }
- 
-
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/appointment/services", { replace: true });
+    }
+  }, [location, navigate]);
   return (
     <div className="app">
       <div className="main-content">
-        {
-          isMakeAppointment && <Topbar />
-        }
+        {isMakeAppointment && <Topbar />}
         <Routes>
           <Route path="appointment/services" element={<ServiceSelection />} />
           <Route path="appointment/slots/:serviceId" element={<SlotSelection />} />
